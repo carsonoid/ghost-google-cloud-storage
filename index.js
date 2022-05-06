@@ -12,7 +12,8 @@ class GStore extends BaseStore {
         options = config;
         var gcs = storage({
             projectId: options.projectId,
-            keyFilename: options.key
+            // skip key and use default credentials
+            // keyFilename: options.key
         });
         this.bucket = gcs.bucket(options.bucket);
         this.assetDomain = options.assetDomain || `storage.googleapis.com/${options.bucket}/`;
